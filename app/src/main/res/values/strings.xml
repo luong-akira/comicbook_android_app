@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ReadComicBook</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_details">TextView</string>
+    <string name="author_details">TextView</string>
+    <string name="genre_details">TextView</string>
+    <string name="average_rating_details">TextView</string>
+    <string name="status_details">TextView</string>
+    <string name="description_details">TextView</string>
+    <string name="comic_details">%s</string>
+    <string name="token">token</string>
+</resources>

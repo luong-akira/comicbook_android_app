@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.readcomicbook.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completedComicsFragment"
+        android:name="com.example.readcomicbook.fragments.CompletedComicsFragment"
+        android:label="Completed Comics"
+        tools:layout="@layout/fragment_completed_comics" >
+        <action
+            android:id="@+id/action_completedComicsFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/comicDetailsFragment"
+        android:name="com.example.readcomicbook.fragments.ComicDetailsFragment"
+
+        tools:layout="@layout/fragment_comic_details" >
+        <action
+            android:id="@+id/action_comicDetailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="currentComic"
+            app:argType="com.example.readcomicbook.model.Comic" />
+        <action
+            android:id="@+id/action_comicDetailsFragment_to_chapterDetailsFragment"
+            app:destination="@id/chapterDetailsFragment" />
+        <action
+            android:id="@+id/action_comicDetailsFragment_to_completedComicsFragment"
+            app:destination="@id/completedComicsFragment" />
+        <action
+            android:id="@+id/action_comicDetailsFragment_to_genreFragment"
+            app:destination="@id/genreFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapterDetailsFragment"
+        android:name="com.example.readcomicbook.fragments.ChapterDetailsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_chapter_details" >
+        <action
+            android:id="@+id/action_chapterDetailsFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+        <argument
+            android:name="comicSlug"
+            app:argType="string" />
+        <argument
+            android:name="chapterSlug"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.readcomicbook.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.readcomicbook.fragments.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.example.readcomicbook.fragments.GenreFragment"
+        android:label="Genre"
+        tools:layout="@layout/fragment_genre" >
+        <argument
+            android:name="currentGenre"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_genreFragment_to_comicDetailsFragment"
+            app:destination="@id/comicDetailsFragment" />
+    </fragment>
+</navigation>
